@@ -1,0 +1,32 @@
+= provide(:button_text, 'Save changes') 
+
+button.btn.btn-primary.mt-3 type="button" data-toggle="modal" data-target="#updateUserModal"
+  | Update Profile
+  
+div.modal.fade id="updateUserModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-toggle="modal"
+  div.modal-dialog.modal-dialog-centered role="document"
+    div.modal-content
+      div.modal-header
+        h5.modal-title id="exampleModalCenterTitle" Edit User
+        button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+      div.modal-body
+        div.row.col-md-offset-5.mx-auto
+          div.form-group.card-body
+            = form_for @user, remote: true do |f| 
+
+              = f.label :name, class: 'mt-3'
+              = f.text_field :name, class: 'form-control', placeholder: 'Enter name'
+
+              = f.label :email, class: 'mt-3'
+              = f.email_field :email, class: 'form-control', placeholder: 'Enter email'
+
+              = f.label :password, class: 'mt-3'
+              = f.password_field :password, class: 'form-control', placeholder: 'Password'
+
+              = f.label :password_confirmation, "Password Confirmation", class: 'mt-3'
+              = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirm'
+
+              = f.submit yield(:button_text), class: "btn btn-primary mt-3" 
+      div.modal-footer
+        button.btn.btn-secondary type="button" data-dismiss="modal" Close

@@ -1,0 +1,8 @@
+div.ml-5.mr-5.mt-3
+  - if @user.stores.any?
+    h3.m-5 Stores (#{@user.stores.count})
+    div.card-deck = render @stores 
+  = will_paginate @stores
+
+div#store-form class="ml-5"
+  = render 'shared/store_form'

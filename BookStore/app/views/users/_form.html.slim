@@ -1,0 +1,22 @@
+= provide(:title, 'Sign up') 
+
+div.row.card.col-md-9.col-md-offset-5.mt-5.mx-auto
+    div.form-group.card-body
+        = form_for(@user, url: signup_path) do |f| 
+            /= render 'shared/error_messages'
+
+            = f.label :name, class: 'mt-3'
+            = f.text_field :name, class: 'form-control', placeholder: 'Enter name'
+
+            = f.label :email, class: 'mt-3'
+            = f.email_field :email, class: 'form-control', placeholder: 'Enter email'
+
+            = f.label :password, class: 'mt-3'
+            = f.password_field :password, class: 'form-control', placeholder: 'Password'
+
+            = f.label :password_confirmation, "Password Confirmation", class: 'mt-3'
+            = f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirm'
+                
+            = f.submit yield(:button_text), class: "btn btn-info mt-3"
+            p.mt-3 Already have an account? #{link_to "Login now!", login_path, class: 'mt-3'}
+          

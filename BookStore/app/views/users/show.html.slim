@@ -1,0 +1,14 @@
+= provide(:title, @user.name) 
+
+div.card.text-center.mt-5 style='max-width: 25rem;' 
+  div.card-header User Info
+  div.card-body
+    h5.card-title #{@user.name}
+    h5.card-title #{@user.email}
+  div.card-footer.text-muted Stores: #{current_user.stores.count} | Books: #{current_user.books.count}
+
+div#edit-user
+  = link_to 'Update Profile', edit_user_path(current_user), class: 'btn btn-primary text-light mt-3', remote: true
+
+
+

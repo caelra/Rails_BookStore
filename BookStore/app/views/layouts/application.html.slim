@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title BookStore
+    = csrf_meta_tags
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  header
+    = render 'layouts/header'
+
+  div.mt-3.ml-5.mr-5
+    - flash.each do |message_type, message|
+      div.alert.alert-primary role="alert"
+        h2.text-center = message
+          
+    == yield

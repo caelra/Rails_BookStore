@@ -1,0 +1,8 @@
+div.ml-5.mr-5.mt-3
+  - if @user.books.any?
+    h3.m-5 Books (#{@user.books.count})
+    div.card-deck = render @books 
+  = will_paginate @books
+
+div#book-form  class="ml-5"
+  = render 'shared/book_form'

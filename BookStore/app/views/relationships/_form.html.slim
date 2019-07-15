@@ -1,0 +1,14 @@
+= provide(:title, 'Book to Store') 
+
+div.row.card.col-md-9.col-md-offset-5.mt-5.mx-auto
+    div.form-group.card-body
+        = form_for(@relationship, url: relationship_path(id: @store)) do |f| 
+            /= render 'shared/error_messages'
+
+            = f.label :book, class: 'mt-3', for: "exampleFormControlSelect1"
+            = f.select(:book_id, book_select, {}, :prompt => 'Select', class: 'form-control')
+            
+            = f.label :quantity, class: 'mt-3'
+            = f.number_field :quantity, class: 'form-control', placeholder: 'Enter quantity'
+                
+            = f.submit 'Add Book to Store', class: "btn btn-info mt-3"

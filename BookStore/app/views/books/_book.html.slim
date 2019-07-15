@@ -1,0 +1,8 @@
+div.card.border-dark.mb-3 style="max-width: 18rem;"
+    div.card-header Year: #{book.year}
+    div.card-body
+        h5.card-title Title: #{book.title} 
+        p.card-text Author: #{book.author}
+        = link_to "Delete", book_path(book), { method: "delete", class: 'btn btn-danger', remote: true, data: { confirm: "Are you sure?" }}
+        = link_to "Edit", edit_book_path(id: book), class: 'btn btn-primary'
+

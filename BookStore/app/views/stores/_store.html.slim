@@ -1,0 +1,10 @@
+div.card.border-dark.mb-3 style="max-width: 18rem;"
+    div.card-header Phone: #{store.phone}
+    div.card-body
+        h5.card-title Codename: #{store.codename} 
+        p.card-text Address: #{store.address}
+        = link_to 'Add Books', new_relationship_path(id: store), class: 'btn btn-primary'
+        = link_to 'Edit', edit_store_path(id: store), class: 'btn btn-primary store-form'
+        = link_to "Delete", store_path(store),{ method: "delete", remote: true, class: 'btn btn-danger', data: { confirm: "Are you sure?" }}
+        
+        

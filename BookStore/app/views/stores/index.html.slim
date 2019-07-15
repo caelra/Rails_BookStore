@@ -1,0 +1,10 @@
+= provide(:button_text, 'Create new store') 
+
+- if logged_in?
+    = provide(:button_text, 'Create new store') 
+    = render 'shared/store_form'
+
+- else
+    div.center.jumbotron
+      h1 Welcome to bookStore
+      = link_to "Sign up now", signup_path, class: 'btn btn-lg btn-primary'

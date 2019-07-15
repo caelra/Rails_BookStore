@@ -1,0 +1,31 @@
+h1 Listing books
+
+table
+  thead
+
+h1 New book
+
+= provide(:button_text, 'Create new store')
+
+div.row.card.col-md-6.col-md-offset-5.mt-5.mx-auto
+    div.form-group.card-body
+      h2.text-center New Store
+      = form_for @book do |f|
+        /= render 'shared/error_messages', object: f.object 
+
+        = f.label :title, class: 'mt-3'
+        = f.text_field :title, class: 'form-control'
+
+        = f.label :author, class: 'mt-3'
+        = f.text_field :author, class: 'form-control'
+
+        = f.label :year, class: 'mt-3'
+        = f.text_field :year, class: 'form-control'
+
+        = f.submit yield(:button_text), class: "btn btn-info mt-3"
+
+
+= link_to 'Back', books_path
+
+
+= link_to 'New Book', new_book_path

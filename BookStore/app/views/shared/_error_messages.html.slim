@@ -1,0 +1,9 @@
+- if current_user.errors.any?
+    div#error_explanation
+      div.alert.alert-danger
+        | The form contains 
+        = pluralize(current_user.errors.count, 'error')
+        ul = current_user.errors.full_messages.each do |msg| 
+          li = msg
+          
+

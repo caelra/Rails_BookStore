@@ -1,0 +1,7 @@
+div.card.text-white.bg-info.mb-3.mt-3 style="max-width: 18rem;"
+  h5.card-header = current_user.name
+  div.card-body 
+    h5.card-title = pluralize(current_user.stores.count, "Store")
+    h5.card-title = pluralize(current_user.books.count, "Book")
+
+

@@ -1,0 +1,21 @@
+h3 Search Result
+
+
+- if @query.search_books.empty?
+  p No Books Found
+- else
+  table.table
+    thead
+      tr
+        th scope="col" Title 
+        th scope="col" Author 
+        th scope="col" Year 
+    tbody
+      tr
+      = @query.search_books.each do |q|
+        td #{q.title}
+        td #{q.author}
+        td #{q.year}
+
+
+= link_to "Back", new_search_path
