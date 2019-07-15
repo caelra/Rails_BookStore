@@ -2,8 +2,9 @@
 
 
 # TODO
-- Need to improve
-  -[] Async requests
-  -[] Searching
-  -[] Modals
+Need to improve
+  - UX/UI
+  - Async requests
+  - Searching
+  - Modals
   
