@@ -12,3 +12,10 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       - else
         a  = link_to "Sign up", signup_path, class: 'nav-item nav-link'
         a  = link_to "Log in", login_path, class: 'nav-item nav-link'
+  = form_tag "search/create", method: :get, remote: true, class: 'form-inline my-2 my-lg-0', id: 'search-form' do
+    = text_field_tag :keyword, nil, placeholder: 'Search', class: 'form-control mr-sm-2'
+    = content_tag :button, class: 'btn btn-outline-success my-2 my-sm-0', type: :submit do 
+      | Search
+
+
+

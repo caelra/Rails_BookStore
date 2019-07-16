@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search/create'
   get 'static_pages/create'
   root   'static_pages#home'
   get    '/signup',  to: 'users#new'
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   get    '/logout',  to: 'sessions#destroy'
   post   '/relationships/:id', to: 'relationships#create'
-  resources :users, :stores, :books, :relationships, :searches
+  post   '/search/create', to: 'search#create'
+  resources :users, :stores, :books, :relationships, :search
   resources :stores, only: [:create, :destroy]
 end
